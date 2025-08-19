@@ -1,0 +1,154 @@
+/* --- DiabCare Global Stylesheet --- */
+
+/* --- 1. Basic Setup & Typography --- */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, #FFD54F, #FF9800); /* Sunkissed gradient */
+  color: #424242;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #E65100; /* Deep orange */
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  color: #E65100;
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #616161;
+}
+
+/* --- 2. Layout & Main Container --- */
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  border-radius: 15px;
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 1.5rem;
+  max-width: 150px;
+}
+
+/* --- 3. UI Components: Buttons & Links --- */
+.button, button {
+  display: inline-block;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.button-primary {
+    background-color: #FB8C00; /* Vibrant orange */
+}
+
+.button-primary:hover {
+    background-color: #E65100;
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    background-color: #757575; /* Grey */
+}
+
+.button-secondary:hover {
+    background-color: #424242;
+    transform: translateY(-2px);
+}
+
+/* --- 4. Form Styling --- */
+form {
+    display: grid;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #FFECB3;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #FFA726;
+    box-shadow: 0 0 0 3px rgba(255, 167, 38, 0.3);
+}
+
+/* --- 5. List Styling (for results & habits) --- */
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+  margin-top: 1.5rem;
+}
+
+li.habit-item, li.info-item {
+  background: #FFF8E1;
+  margin-bottom: 1rem;
+  padding: 1.2rem;
+  border-radius: 8px;
+  border-left: 5px solid #FFA726;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+li.habit-item:hover, li.info-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+    color: #FB8C00;
+}
+
+/* --- 6. Responsive Design --- */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+    .container {
+        padding: 1.5rem;
+    }
+    form {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+}

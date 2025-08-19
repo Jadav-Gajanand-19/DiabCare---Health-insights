@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diabcare - Predict Diabetes</title>
+  <style>
+    /* --- Basic Setup --- */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, #FFD54F, #FF9800); /* Sunkissed gradient */
+      color: #424242; /* Dark grey for readability */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    /* --- Main Container --- */
+    .container {
+      background: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      max-width: 600px; /* More suitable for a form */
+      width: 100%;
+      margin: auto;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    /* --- Logo --- */
+    .logo {
+      display: block;
+      margin: 0 auto 1.5rem;
+      max-width: 150px; /* Slightly smaller for form context */
+    }
+
+    /* --- Typography --- */
+    h2 {
+      color: #E65100; /* Deep orange */
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+        line-height: 1.6;
+        font-size: 1.1rem; /* Enhanced font size */
+        color: #616161;
+        margin-bottom: 2rem;
+    }
+    
+    /* --- Form Styling --- */
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns */
+        gap: 1.5rem;
+        text-align: left;
+    }
+
+    /* Make specific inputs span both columns */
+    .full-width {
+        grid-column: 1 / -1;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #FFECB3;
+        border-radius: 8px;
+        font-size: 1rem;
+        box-sizing: border-box; /* Important for padding and width */
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #FFA726;
+        box-shadow: 0 0 0 3px rgba(255, 167, 38, 0.3);
+    }
+    
+    /* --- Submit Button --- */
+    button {
+      grid-column: 1 / -1; /* Span full width */
+      background-color: #FB8C00; /* Vibrant orange */
+      color: white;
+      padding: 14px 25px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #E65100; /* Darker orange on hover */
+        transform: translateY(-2px);
+    }
+    
+    /* Responsive adjustment for smaller screens */
+    @media (max-width: 600px) {
+        form {
+            grid-template-columns: 1fr; /* Single column on mobile */
+        }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="{{ url_for('static', filename='images/diabcare_logo.png') }}" alt="Diabcare Logo" class="logo" onerror="this.onerror=null;this.src='https://placehold.co/150x75/FF9800/FFFFFF?text=DiabCare';">
+    <h2>Health Metrics</h2>
+    <p>Enter your details below to get a prediction.</p>
+    
+    <form action="/predict" method="post">
+      <input type="number" name="pregnancies" placeholder="Pregnancies" required min="0" max="20" title="Number of times pregnant.&#10;Min: 0, Max: 20">
+      <input type="number" name="glucose" placeholder="Glucose (mg/dL)" required min="0" max="300" title="Plasma glucose concentration.&#10;Normal (fasting): 70-100 mg/dL&#10;Min: 0, Max: 300">
+      <input type="number" name="bloodpressure" placeholder="Blood Pressure (mm Hg)" required min="0" max="150" title="Diastolic blood pressure.&#10;Normal: < 80 mm Hg&#10;Min: 0, Max: 150">
+      <input type="number" name="skinthickness" placeholder="Skin Thickness (mm)" required min="0" max="100" title="Triceps skin fold thickness.&#10;Normal varies.&#10;Min: 0, Max: 100 mm">
+      <input type="number" name="insulin" placeholder="Insulin (mu U/ml)" required min="0" max="900" title="2-Hour serum insulin.&#10;Normal (fasting): < 25 mu U/ml&#10;Min: 0, Max: 900">
+      <input type="number" name="bmi" step="0.1" placeholder="BMI" required min="0" max="70" title="Body Mass Index.&#10;Normal: 18.5 - 24.9&#10;Min: 0, Max: 70">
+      <input type="number" name="age" placeholder="Age" required min="1" max="120" title="Your age in years.&#10;Min: 1, Max: 120">
+      <input type="number" name="dpf" step="0.001" placeholder="Diabetes Pedigree Func." required min="0" max="3" class="full-width" title="Scores likelihood of diabetes based on family history.&#10;Min: 0, Max: 3">
+      
+      <button type="submit">Predict</button>
+    </form>
+  </div>
+</body>
+</html>

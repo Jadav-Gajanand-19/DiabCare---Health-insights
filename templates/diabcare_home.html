@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link
+    rel="stylesheet"
+    as="style"
+    onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Lexend:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900"
+  />
+  <title>DiabCare - Health Insights</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body>
+  <div class="relative flex size-full min-h-screen flex-col bg-[#fcf9f8] group/design-root overflow-x-hidden" style='font-family: Lexend, "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col">
+      <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f3ebe7] px-10 py-3">
+        <div class="flex items-center gap-4 text-[#1b120e]">
+          <img src="{{ url_for('static', filename='images/diabcare_logo.png') }}" alt="Diabcare Logo" class="h-10 w-auto">
+          <h2 class="text-[#1b120e] text-lg font-bold leading-tight tracking-[-0.015em]">DiabCare</h2>
+        </div>
+        <div class="flex flex-1 justify-end gap-8">
+          <div class="flex items-center gap-9">
+            <a class="text-[#1b120e] text-sm font-medium leading-normal" href="/">Home</a>
+            <a class="text-[#1b120e] text-sm font-medium leading-normal" href="/predict-form">Start Prediction</a>
+          </div>
+        </div>
+      </header>
+      <div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+          <div class="@container">
+            <div class="@[480px]:p-4">
+              <div
+                class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4"
+                style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop");'
+              >
+                <div class="flex flex-col gap-2 text-center">
+                  <h1
+                    class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                  >
+                    Empower Your Health Journey
+                  </h1>
+                  <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                    Gain insights into your diabetes risk with our advanced prediction model. Understand your health better and take proactive steps towards a healthier future.
+                  </h2>
+                </div>
+                <a
+                  href="/predict-form"
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#e65319] text-[#fcf9f8] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                >
+                  <span class="truncate">Start Prediction</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <h2 class="text-[#1b120e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Understanding Diabetes</h2>
+          <p class="text-[#1b120e] text-base font-normal leading-normal pb-3 pt-1 px-4">
+            Diabetes is a chronic condition that affects how your body processes blood sugar (glucose). It's characterized by elevated levels of glucose in the blood, which can
+            lead to serious health complications over time. There are several types of diabetes, including type 1, type 2, and gestational diabetes, each with its own causes and
+            risk factors.
+          </p>
+          <h2 class="text-[#1b120e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Key Facts About Diabetes</h2>
+          <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+            <div class="flex flex-1 gap-3 rounded-lg border border-[#e7d6d0] bg-[#fcf9f8] p-4 items-center">
+              <div class="text-[#1b120e]" data-icon="Heart" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-[#1b120e] text-base font-bold leading-tight">Cardiovascular Health</h2>
+            </div>
+            <div class="flex flex-1 gap-3 rounded-lg border border-[#e7d6d0] bg-[#fcf9f8] p-4 items-center">
+              <div class="text-[#1b120e]" data-icon="Cat" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M96,140a12,12,0,1,1-12-12A12,12,0,0,1,96,140Zm76-12a12,12,0,1,0,12,12A12,12,0,0,0,172,128Zm60-80v88c0,52.93-46.65,96-104,96S24,188.93,24,136V48A16,16,0,0,1,51.31,36.69c.14.14.26.27.38.41L69,57a111.22,111.22,0,0,1,118.1,0L204.31,37.1c.12-.14.24-.27.38-.41A16,16,0,0,1,232,48Zm-16,0-21.56,24.8A8,8,0,0,1,183.63,74,88.86,88.86,0,0,0,168,64.75V88a8,8,0,1,1-16,0V59.05a97.43,97.43,0,0,0-16-2.72V88a8,8,0,1,1-16,0V56.33a97.43,97.43,0,0,0-16,2.72V88a8,8,0,1,1-16,0V64.75A88.86,88.86,0,0,0,72.37,74a8,8,0,0,1-10.81-1.17L40,48v88c0,41.66,35.21,76,80,79.67V195.31l-13.66-13.66a8,8,0,0,1,11.32-11.31L128,180.68l10.34-10.34a8,8,0,0,1,11.32,11.31L136,195.31v20.36c44.79-3.69,80-38,80-79.67Z"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-[#1b120e] text-base font-bold leading-tight">Kidney Function</h2>
+            </div>
+            <div class="flex flex-1 gap-3 rounded-lg border border-[#e7d6d0] bg-[#fcf9f8] p-4 items-center">
+              <div class="text-[#1b120e]" data-icon="Eye" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-[#1b120e] text-base font-bold leading-tight">Vision Care</h2>
+            </div>
+            <div class="flex flex-1 gap-3 rounded-lg border border-[#e7d6d0] bg-[#fcf9f8] p-4 items-center">
+              <div class="text-[#1b120e]" data-icon="Boot" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M192,112H160V56a16,16,0,0,0-16-16H32a8,8,0,0,0-7.47,10.86c11.06,28.84,8.76,83.71-.22,114.93A8.25,8.25,0,0,0,24,168v32a16,16,0,0,0,16,16H66.11a16,16,0,0,0,7.16-1.69L85.89,208h16.22l12.62,6.31a16,16,0,0,0,7.16,1.69h28.22a16,16,0,0,0,7.16-1.69L169.89,208h16.22l12.62,6.31a16,16,0,0,0,7.16,1.69H232a16,16,0,0,0,16-16V168A56.06,56.06,0,0,0,192,112ZM42.86,56H144V80H112a8,8,0,0,0,0,16h32v16H112a8,8,0,0,0,0,16h80a40.07,40.07,0,0,1,39.2,32H42.25C49,129.16,50.41,85.83,42.86,56ZM232,200H205.89l-12.62-6.31a16,16,0,0,0-7.16-1.69H169.89a16,16,0,0,0-7.16,1.69L150.11,200H121.89l-12.62-6.31a16,16,0,0,0-7.16-1.69H85.89a16,16,0,0,0-7.16,1.69L66.11,200H40V176H232Z"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-[#1b120e] text-base font-bold leading-tight">Foot Health</h2>
+            </div>
+          </div>
+          <h2 class="text-[#1b120e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Take Control of Your Health</h2>
+          <p class="text-[#1b120e] text-base font-normal leading-normal pb-3 pt-1 px-4">
+            Early detection and management of diabetes are crucial for preventing complications and maintaining a good quality of life. Our prediction model can help you assess
+            your risk factors and make informed decisions about your health.
+          </p>
+          <div class="flex px-4 py-3 justify-center">
+            <a
+              href="/predict-home"
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-[#e65319] text-[#fcf9f8] text-base font-bold leading-normal tracking-[0.015em]"
+            >
+              <span class="truncate">Detailed Explanation & Prediction</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

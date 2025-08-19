@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthy Habits for Diabetes Management</title>
+  <style>
+    /* --- Basic Setup --- */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, #FFD54F, #FF9800); /* Sunkissed gradient */
+      color: #424242;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    /* --- Main Container --- */
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2.5rem;
+      border-radius: 15px;
+      max-width: 800px;
+      width: 100%;
+      margin: auto;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    /* --- Logo --- */
+    .logo {
+      display: block;
+      margin: 0 auto 1.5rem;
+      max-width: 150px;
+    }
+
+    /* --- Typography --- */
+    h2 {
+      color: #E65100;
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+      display: inline-flex;
+      align-items: center;
+      border-bottom: 2px solid #FFECB3;
+      padding-bottom: 0.5rem;
+    }
+
+    /* --- Habits List Styling --- */
+    .habits-list {
+      list-style-type: none;
+      padding: 0;
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+
+    .habit-item {
+      background: #FFF8E1; /* Light cream color */
+      margin-bottom: 1rem;
+      padding: 1.2rem;
+      border-radius: 8px;
+      border-left: 5px solid #FFA726; /* Accent color */
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .habit-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .habit-item .icon {
+        width: 2.5rem; /* Larger icons */
+        height: 2.5rem;
+        margin-right: 1.5rem;
+        flex-shrink: 0; /* Prevent icon from shrinking */
+        color: #FB8C00;
+    }
+
+    /* --- Back Button --- */
+    .button-secondary {
+      display: inline-block;
+      background-color: #757575; /* Grey */
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 2rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    
+    .button-secondary:hover {
+        background-color: #424242;
+        transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="{{ url_for('static', filename='images/diabcare_logo.png') }}" alt="Diabcare Logo" class="logo" onerror="this.onerror=null;this.src='https://placehold.co/150x75/FF9800/FFFFFF?text=DiabCare';">
+    <h2>Living Well with Diabetes</h2>
+
+    <ul class="habits-list">
+      <li class="habit-item">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"/><path d="M12 6v6l4 2"/></svg>
+        <span><strong>Master Your Plate:</strong> Learn about carb counting and the glycemic index. Prioritize non-starchy vegetables, lean proteins, and healthy fats.</span>
+      </li>
+      <li class="habit-item">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 18v-6"/><path d="M12 8h.01"/></svg>
+        <span><strong>Move Your Body:</strong> Combine aerobic exercise (like walking or swimming) with strength training to improve insulin sensitivity.</span>
+      </li>
+      <li class="habit-item">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span><strong>Monitor & Log:</strong> Check your blood sugar regularly as recommended by your doctor. Keep a log to understand how food and activity affect your levels.</span>
+      </li>
+       <li class="habit-item">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"/><path d="M12 12l-4 4"/><path d="M12 12V6h1"/></svg>
+        <span><strong>Foot Care is Crucial:</strong> Check your feet daily for any cuts, sores, or changes in color. Always wear comfortable, well-fitting shoes.</span>
+      </li>
+      <li class="habit-item">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"/><path d="M12 12l4-4"/><path d="M12 12V6h-1"/></svg>
+        <span><strong>Medication Adherence:</strong> Take your prescribed medications consistently and on time. Talk to your doctor before making any changes.</span>
+      </li>
+    </ul>
+
+    <a href="/" class="button-secondary">← Back to Home</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Diabcare</title>
+  <style>
+    /* --- Basic Setup --- */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, #FFD54F, #FF9800); /* Sunkissed gradient */
+      color: #424242; /* Dark grey for readability */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    /* --- Main Container --- */
+    .container {
+      background: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      max-width: 800px;
+      width: 100%;
+      margin: auto;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    /* --- Logo --- */
+    .logo {
+      display: block;
+      margin: 0 auto 1.5rem;
+      max-width: 200px; /* Adjusted size for better balance */
+    }
+
+    /* --- Typography --- */
+    h1 {
+      color: #E65100; /* Deep orange */
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    h2 {
+      color: #F57C00; /* Bright orange */
+      border-bottom: 2px solid #FFECB3;
+      padding-bottom: 0.5rem;
+      margin-top: 2.5rem;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    /* --- Icon Styling --- */
+    .icon {
+        width: 1em;
+        height: 1em;
+        margin-right: 0.5rem;
+        vertical-align: middle;
+    }
+
+    h1 .icon {
+        width: 1.2em;
+        height: 1.2em;
+        margin-left: 0.5rem;
+    }
+
+    /* --- List Styling for Inputs --- */
+    ul {
+      list-style-type: none;
+      padding: 0;
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+
+    li {
+      background: #FFF8E1; /* Light cream color */
+      margin-bottom: 0.75rem;
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 5px solid #FFA726; /* Accent color */
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    li:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    /* --- Call to Action Button --- */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FB8C00; /* Vibrant orange */
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 2rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .cta-button:hover {
+        background-color: #E65100; /* Darker orange on hover */
+        transform: translateY(-2px);
+    }
+    
+    .cta-button .icon {
+        margin-right: 0.5rem;
+        margin-left: -0.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Diabcare Logo -->
+    <img src="{{ url_for('static', filename='images/diabcare_logo.png') }}" alt="Diabcare Logo" class="logo" onerror="this.onerror=null;this.src='https://placehold.co/200x100/FF9800/FFFFFF?text=DiabCare';">
+    
+    <h1>Welcome to Diabcare 
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#E65100"><path d="M12 2c-5.33 4.55-8 8.48-8 11.5C4 18.52 7.58 22 12 22s8-3.48 8-8.5C20 10.48 17.33 6.55 12 2z"/></svg>
+    </h1>
+    <p>Diabcare is a smart AI tool that helps predict whether a person may be at risk of diabetes using key medical indicators.</p>
+    <h2>
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5.5 5.5 0 0 0-5.5 5.5c0 1.73.82 3.28 2.08 4.26-1.05.65-2.08 1.48-2.08 2.98v.26c0 1.66 1.34 3 3 3h5c1.66 0 3-1.34 3-3v-.26c0-1.5-1.03-2.33-2.08-2.98C16.68 10.78 17.5 9.23 17.5 7.5A5.5 5.5 0 0 0 12 2zM9 18v2M15 18v2M2 12h2M20 12h2"></path></svg>
+        Why We Ask These Inputs
+    </h2>
+    <ul>
+      <li><strong>Pregnancies:</strong> Especially important in gestational diabetes.</li>
+      <li><strong>Glucose:</strong> Direct indicator of blood sugar level.</li>
+      <li><strong>Blood Pressure:</strong> High BP is a common comorbidity in diabetics.</li>
+      <li><strong>Skin Thickness:</strong> Correlates with insulin resistance.</li>
+      <li><strong>Insulin:</strong> Low or abnormal insulin levels suggest poor sugar regulation.</li>
+      <li><strong>BMI:</strong> High BMI is a major diabetes risk factor.</li>
+      <li><strong>Diabetes Pedigree Function (DPF):</strong> Measures genetic diabetes risk.</li>
+      <li><strong>Age:</strong> Risk increases with age.</li>
+    </ul>
+
+    <!-- Styled link as a button -->
+    <a href="/predict-form" class="cta-button">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+        Start Prediction
+    </a>
+  </div>
+</body>
+</html>

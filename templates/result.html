@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diabcare - Prediction Result</title>
+  <style>
+    /* --- Basic Setup --- */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, #FFD54F, #FF9800); /* Sunkissed gradient */
+      color: #424242;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    /* --- Main Container --- */
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2.5rem;
+      border-radius: 15px;
+      max-width: 650px;
+      width: 100%;
+      margin: auto;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    /* --- Logo --- */
+    .logo {
+      display: block;
+      margin: 0 auto 1.5rem;
+      max-width: 150px;
+    }
+
+    /* --- Typography --- */
+    h2 {
+      color: #E65100;
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .prediction-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+
+    .result-diabetic {
+        color: #c62828; /* Red for alert */
+        background-color: #ffcdd2;
+    }
+
+    .result-healthy {
+        color: #2e7d32; /* Green for positive */
+        background-color: #c8e6c9;
+    }
+    
+    .preventive-measures {
+        text-align: left;
+        margin-top: 2rem;
+    }
+    
+    .preventive-measures h3 {
+        color: #F57C00;
+        font-size: 1.2rem;
+    }
+
+    .preventive-measures ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .preventive-measures li {
+        background: #FFF8E1;
+        margin-bottom: 0.5rem;
+        padding: 0.75rem;
+        border-radius: 5px;
+        border-left: 4px solid #FFA726;
+    }
+
+    /* --- Buttons/Links --- */
+    .button {
+      display: inline-block;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    
+    .button-primary {
+        background-color: #FB8C00; /* Vibrant orange */
+    }
+    
+    .button-primary:hover {
+        background-color: #E65100;
+        transform: translateY(-2px);
+    }
+    
+    .button-secondary {
+        background-color: #757575; /* Grey */
+    }
+    
+    .button-secondary:hover {
+        background-color: #424242;
+        transform: translateY(-2px);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="{{ url_for('static', filename='images/diabcare_logo.png') }}" alt="Diabcare Logo" class="logo" onerror="this.onerror=null;this.src='https://placehold.co/150x75/FF9800/FFFFFF?text=DiabCare';">
+    <h2>Prediction Result</h2>
+
+    {% if result == "Diabetic" %}
+        <p class="prediction-text result-diabetic">{{ prediction_text }}</p>
+        <a href="/healthy-habits" class="button button-primary">See Healthy Habits →</a>
+    {% else %}
+        <p class="prediction-text result-healthy">{{ prediction_text }}</p>
+        <div class="preventive-measures">
+            <h3>Congratulations on your healthy result! Here are some tips to stay that way:</h3>
+            <ul>
+                <li>Maintain a balanced diet rich in fiber and whole grains.</li>
+                <li>Engage in regular physical activity (at least 30 mins a day).</li>
+                <li>Monitor your weight and maintain a healthy BMI.</li>
+                <li>Get regular check-ups with your doctor.</li>
+            </ul>
+        </div>
+    {% endif %}
+
+    <br><br>
+    <a href="/" class="button button-secondary">← Back to Home</a>
+  </div>
+</body>
+</html>
