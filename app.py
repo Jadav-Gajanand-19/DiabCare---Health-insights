@@ -20,7 +20,7 @@ except FileNotFoundError:
 @app.route('/')
 def home():
     """Renders the main welcome page."""
-    return render_template("diabcare_home.html")
+    return render_template("index.html")
 
 @app.route('/predict-home')
 def predict_home():
