@@ -33,7 +33,6 @@ def predict_form():
 @app.route('/healthy-habits')
 def healthy_habits():
     """Renders the healthy habits page (you'll need to create this HTML file)."""
-    # Note: You will need to create a 'healthy_habits.html' file in your templates folder.
     return render_template("healthy_habits.html")
 
 @app.route('/predict', methods=['POST'])
