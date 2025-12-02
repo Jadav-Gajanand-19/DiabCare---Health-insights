@@ -2,7 +2,7 @@
 
 ![DiabCare Logo](https://github.com/Jadav-Gajanand-19/DiabCare---Health-insights/blob/main/static/images/diabcare_logo.png)
 
-Live Link : [https://github.com/Jadav-Gajanand-19/DiabCare---Health-insights/blob/main/static/images/diabcare_logo.png](https://diabcare-health-insights-59vo.onrender.com/)
+Live Link : https://diabcare-health-insights-59vo.onrender.com/
 
 ## 🌟 Overview
 **DiabCare** is a smart AI-powered web application that helps predict whether a person may be at risk of **diabetes** using key medical indicators.  
